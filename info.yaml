@@ -1,17 +1,17 @@
 # Tiny Tapeout project information
 project:
-  title:        ""      # Project title
-  author:       ""      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
+  title:        "8x8 LED Matrix / WS2812 Driver"      # Project title
+  author:       "Ken Pettit"      # Your name
+  discord:      "busy_courgette_50064"
+  description:  "SPI-loaded 64x8-bit framebuffer driving an 8x8 LED matrix with 8-bit PWM, or a 64-LED WS2812 string in 3-2-3 RGB"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     10000000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
-  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  tiles: "2x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_kpettit_led_matrix"
 
   # List your project's source files here.
   # Source files must be in ./src and you must list each source file separately, one per line.
@@ -23,34 +23,34 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "SPI_SCLK"
+  ui[1]: "SPI_MOSI"
+  ui[2]: "SPI_CS_N"
+  ui[3]: "BLANK"
+  ui[4]: "SPEED0"
+  ui[5]: "SPEED1"
+  ui[6]: "COL_INV"
+  ui[7]: "ROW_INV"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "COL0 / WS2812_DOUT"
+  uo[1]: "COL1"
+  uo[2]: "COL2"
+  uo[3]: "COL3"
+  uo[4]: "COL4"
+  uo[5]: "COL5"
+  uo[6]: "COL6"
+  uo[7]: "COL7"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "ROW0_N"
+  uio[1]: "ROW1_N"
+  uio[2]: "ROW2_N"
+  uio[3]: "ROW3_N"
+  uio[4]: "ROW4_N"
+  uio[5]: "ROW5_N"
+  uio[6]: "ROW6_N"
+  uio[7]: "ROW7_N"
 
 # Do not change!
 yaml_version: 6
